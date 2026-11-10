@@ -7,7 +7,7 @@ workflows:
         vars:
           XCODE_WORKSPACE: "Tigers Quest The Golden Cave.xcworkspace"
           XCODE_SCHEME: "Tigers Quest The Golden Cave"
-          BUNDLE_ID: "com.fruit.quest.app"
+          BUNDLE_ID: "com.tiger.mage"
           APP_STORE_APP_ID: 6833011504
         xcode: latest
         cocoapods: 1.14.2
