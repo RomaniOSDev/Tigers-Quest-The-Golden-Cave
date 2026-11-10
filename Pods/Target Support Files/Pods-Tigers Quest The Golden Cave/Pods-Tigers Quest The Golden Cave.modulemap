@@ -1,0 +1,6 @@
+framework module Pods_Tigers_Quest__The_Golden_Cave {
+  umbrella header "Pods-Tigers Quest The Golden Cave-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30F5539F30A1CD9A003028B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5539630A1CD9A003028B3 /* AppDelegate.swift */; };
+		30F553A030A1CD9A003028B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5539730A1CD9A003028B3 /* SceneDelegate.swift */; };
+		30F553A130A1CD9A003028B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F5539830A1CD9A003028B3 /* ViewController.swift */; };
+		30F553A230A1CD9A003028B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F5539A30A1CD9A003028B3 /* Assets.xcassets */; };
+		30F553A330A1CD9A003028B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F5539B30A1CD9A003028B3 /* LaunchScreen.storyboard */; };
+		30F553A430A1CD9A003028B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F5539D30A1CD9A003028B3 /* Main.storyboard */; };
+		30F553AF30A1CD9A003028B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F553AE30A1CD9A003028B3 /* ContentView.swift */; };
+		A1F1001130A1CD9A003028B1 /* CavePalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1001030A1CD9A003028B1 /* CavePalette.swift */; };
+		A1F1001330A1CD9A003028B1 /* AppBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1001230A1CD9A003028B1 /* AppBackgroundView.swift */; };
+		A1F1001530A1CD9A003028B1 /* ScreenChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1001430A1CD9A003028B1 /* ScreenChrome.swift */; };
+		A1F1001730A1CD9A003028B1 /* CaveArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1001630A1CD9A003028B1 /* CaveArt.swift */; };
+		A1F1001930A1CD9A003028B1 /* QuestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1001830A1CD9A003028B1 /* QuestModels.swift */; };
+		A1F1001B30A1CD9A003028B1 /* QuestStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1001A30A1CD9A003028B1 /* QuestStore.swift */; };
+		A1F1001D30A1CD9A003028B1 /* BattleSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1001C30A1CD9A003028B1 /* BattleSession.swift */; };
+		A1F1001F30A1CD9A003028B1 /* BattleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1001E30A1CD9A003028B1 /* BattleView.swift */; };
+		A1F1002130A1CD9A003028B1 /* DoorPuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1002030A1CD9A003028B1 /* DoorPuzzleView.swift */; };
+		A1F1002330A1CD9A003028B1 /* ForgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1002230A1CD9A003028B1 /* ForgeView.swift */; };
+		A1F1002530A1CD9A003028B1 /* CaveDepth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1002430A1CD9A003028B1 /* CaveDepth.swift */; };
+		A1F1002730A1CD9A003028B1 /* CaveWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1002630A1CD9A003028B1 /* CaveWidgets.swift */; };
+		A1F1002930A1CD9A003028B1 /* CaveTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1002830A1CD9A003028B1 /* CaveTypography.swift */; };
+		A1F1002B30A1CD9A003028B1 /* Cinzel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1F1002A30A1CD9A003028B1 /* Cinzel.ttf */; };
+		A1F1002D30A1CD9A003028B1 /* AppLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1002C30A1CD9A003028B1 /* AppLinks.swift */; };
+		A1F1002F30A1CD9A003028B1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1002E30A1CD9A003028B1 /* SettingsView.swift */; };
+		A1F1003130A1CD9A003028B1 /* CaveTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1003030A1CD9A003028B1 /* CaveTabBar.swift */; };
+		A1F1003330A1CD9A003028B1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1003230A1CD9A003028B1 /* OnboardingView.swift */; };
+		A1F1003530A1CD9A003028B1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F1003430A1CD9A003028B1 /* RootView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		15DC7A6656C4A672E1C0470A /* Pods-Tigers Quest The Golden Cave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tigers Quest The Golden Cave.release.xcconfig"; path = "Target Support Files/Pods-Tigers Quest The Golden Cave/Pods-Tigers Quest The Golden Cave.release.xcconfig"; sourceTree = "<group>"; };
+		30F5539030A1CD9A003028B3 /* Tigers Quest The Golden Cave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tigers Quest The Golden Cave.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		30F5539630A1CD9A003028B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		30F5539730A1CD9A003028B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		30F5539830A1CD9A003028B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		30F5539930A1CD9A003028B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30F5539A30A1CD9A003028B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30F5539C30A1CD9A003028B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		30F5539E30A1CD9A003028B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		30F553AE30A1CD9A003028B3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		69142DB5494B1C7AA87BF0CA /* Pods-Tigers Quest The Golden Cave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tigers Quest The Golden Cave.debug.xcconfig"; path = "Target Support Files/Pods-Tigers Quest The Golden Cave/Pods-Tigers Quest The Golden Cave.debug.xcconfig"; sourceTree = "<group>"; };
+		A1F1001030A1CD9A003028B1 /* CavePalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CavePalette.swift; sourceTree = "<group>"; };
+		A1F1001230A1CD9A003028B1 /* AppBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBackgroundView.swift; sourceTree = "<group>"; };
+		A1F1001430A1CD9A003028B1 /* ScreenChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenChrome.swift; sourceTree = "<group>"; };
+		A1F1001630A1CD9A003028B1 /* CaveArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaveArt.swift; sourceTree = "<group>"; };
+		A1F1001830A1CD9A003028B1 /* QuestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestModels.swift; sourceTree = "<group>"; };
+		A1F1001A30A1CD9A003028B1 /* QuestStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestStore.swift; sourceTree = "<group>"; };
+		A1F1001C30A1CD9A003028B1 /* BattleSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleSession.swift; sourceTree = "<group>"; };
+		A1F1001E30A1CD9A003028B1 /* BattleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleView.swift; sourceTree = "<group>"; };
+		A1F1002030A1CD9A003028B1 /* DoorPuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorPuzzleView.swift; sourceTree = "<group>"; };
+		A1F1002230A1CD9A003028B1 /* ForgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgeView.swift; sourceTree = "<group>"; };
+		A1F1002430A1CD9A003028B1 /* CaveDepth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaveDepth.swift; sourceTree = "<group>"; };
+		A1F1002630A1CD9A003028B1 /* CaveWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaveWidgets.swift; sourceTree = "<group>"; };
+		A1F1002830A1CD9A003028B1 /* CaveTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaveTypography.swift; sourceTree = "<group>"; };
+		A1F1002A30A1CD9A003028B1 /* Cinzel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cinzel.ttf; sourceTree = "<group>"; };
+		A1F1002C30A1CD9A003028B1 /* AppLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLinks.swift; sourceTree = "<group>"; };
+		A1F1002E30A1CD9A003028B1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A1F1003030A1CD9A003028B1 /* CaveTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaveTabBar.swift; sourceTree = "<group>"; };
+		A1F1003230A1CD9A003028B1 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A1F1003430A1CD9A003028B1 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30F553A630A1CD9A003028B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30F5539230A1CD9A003028B3 = {
+			isa = PBXGroup;
+			children = (
+				30F5539330A1CD9A003028B3 /* Tigers Quest The Golden Cave */,
+				30F5539430A1CD9A003028B3 /* Frameworks */,
+				30F5539530A1CD9A003028B3 /* Products */,
+				32E80BCD932F312BC69B6CFE /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		30F5539330A1CD9A003028B3 /* Tigers Quest The Golden Cave */ = {
+			isa = PBXGroup;
+			children = (
+				30F5539630A1CD9A003028B3 /* AppDelegate.swift */,
+				30F5539A30A1CD9A003028B3 /* Assets.xcassets */,
+				A1F1000130A1CD9A003028B1 /* Design */,
+				A1F1000230A1CD9A003028B1 /* Domain */,
+				A1F1000330A1CD9A003028B1 /* Features */,
+				A1F1000830A1CD9A003028B1 /* Resources */,
+				30F5539930A1CD9A003028B3 /* Info.plist */,
+				30F5539B30A1CD9A003028B3 /* LaunchScreen.storyboard */,
+				30F5539D30A1CD9A003028B3 /* Main.storyboard */,
+				30F5539730A1CD9A003028B3 /* SceneDelegate.swift */,
+				30F5539830A1CD9A003028B3 /* ViewController.swift */,
+			);
+			path = "Tigers Quest The Golden Cave";
+			sourceTree = "<group>";
+		};
+		30F5539430A1CD9A003028B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30F5539530A1CD9A003028B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30F5539030A1CD9A003028B3 /* Tigers Quest The Golden Cave.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		32E80BCD932F312BC69B6CFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69142DB5494B1C7AA87BF0CA /* Pods-Tigers Quest The Golden Cave.debug.xcconfig */,
+				15DC7A6656C4A672E1C0470A /* Pods-Tigers Quest The Golden Cave.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A1F1000130A1CD9A003028B1 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1001230A1CD9A003028B1 /* AppBackgroundView.swift */,
+				A1F1001630A1CD9A003028B1 /* CaveArt.swift */,
+				A1F1002430A1CD9A003028B1 /* CaveDepth.swift */,
+				A1F1002630A1CD9A003028B1 /* CaveWidgets.swift */,
+				A1F1002830A1CD9A003028B1 /* CaveTypography.swift */,
+				A1F1001030A1CD9A003028B1 /* CavePalette.swift */,
+				A1F1001430A1CD9A003028B1 /* ScreenChrome.swift */,
+				A1F1003030A1CD9A003028B1 /* CaveTabBar.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		A1F1000230A1CD9A003028B1 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1002C30A1CD9A003028B1 /* AppLinks.swift */,
+				A1F1001C30A1CD9A003028B1 /* BattleSession.swift */,
+				A1F1001830A1CD9A003028B1 /* QuestModels.swift */,
+				A1F1001A30A1CD9A003028B1 /* QuestStore.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A1F1000330A1CD9A003028B1 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1000530A1CD9A003028B1 /* Battle */,
+				A1F1000430A1CD9A003028B1 /* Camp */,
+				A1F1000630A1CD9A003028B1 /* Doors */,
+				A1F1000730A1CD9A003028B1 /* Forge */,
+				A1F1000A30A1CD9A003028B1 /* Settings */,
+				A1F1000B30A1CD9A003028B1 /* Onboarding */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A1F1000430A1CD9A003028B1 /* Camp */ = {
+			isa = PBXGroup;
+			children = (
+				30F553AE30A1CD9A003028B3 /* ContentView.swift */,
+				A1F1003430A1CD9A003028B1 /* RootView.swift */,
+			);
+			path = Camp;
+			sourceTree = "<group>";
+		};
+		A1F1000530A1CD9A003028B1 /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1001E30A1CD9A003028B1 /* BattleView.swift */,
+			);
+			path = Battle;
+			sourceTree = "<group>";
+		};
+		A1F1000630A1CD9A003028B1 /* Doors */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1002030A1CD9A003028B1 /* DoorPuzzleView.swift */,
+			);
+			path = Doors;
+			sourceTree = "<group>";
+		};
+		A1F1000730A1CD9A003028B1 /* Forge */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1002230A1CD9A003028B1 /* ForgeView.swift */,
+			);
+			path = Forge;
+			sourceTree = "<group>";
+		};
+		A1F1000830A1CD9A003028B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1000930A1CD9A003028B1 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A1F1000930A1CD9A003028B1 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1002A30A1CD9A003028B1 /* Cinzel.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A1F1000A30A1CD9A003028B1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1002E30A1CD9A003028B1 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A1F1000B30A1CD9A003028B1 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A1F1003230A1CD9A003028B1 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30F5538F30A1CD9A003028B3 /* Tigers Quest The Golden Cave */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30F553A930A1CD9A003028B3 /* Build configuration list for PBXNativeTarget "Tigers Quest The Golden Cave" */;
+			buildPhases = (
+				BAA8512B816A53CDE84A365D /* [CP] Check Pods Manifest.lock */,
+				30F553A530A1CD9A003028B3 /* Sources */,
+				30F553A630A1CD9A003028B3 /* Frameworks */,
+				30F553A730A1CD9A003028B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tigers Quest The Golden Cave";
+			productName = "Tigers Quest The Golden Cave";
+			productReference = 30F5539030A1CD9A003028B3 /* Tigers Quest The Golden Cave.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30F5539130A1CD9A003028B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					30F5538F30A1CD9A003028B3 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 30F553A830A1CD9A003028B3 /* Build configuration list for PBXProject "Tigers Quest The Golden Cave" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30F5539230A1CD9A003028B3;
+			productRefGroup = 30F5539530A1CD9A003028B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30F5538F30A1CD9A003028B3 /* Tigers Quest The Golden Cave */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30F553A730A1CD9A003028B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F553A230A1CD9A003028B3 /* Assets.xcassets in Resources */,
+				30F553A330A1CD9A003028B3 /* LaunchScreen.storyboard in Resources */,
+				30F553A430A1CD9A003028B3 /* Main.storyboard in Resources */,
+				A1F1002B30A1CD9A003028B1 /* Cinzel.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BAA8512B816A53CDE84A365D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tigers Quest The Golden Cave-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30F553A530A1CD9A003028B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F5539F30A1CD9A003028B3 /* AppDelegate.swift in Sources */,
+				30F553A030A1CD9A003028B3 /* SceneDelegate.swift in Sources */,
+				30F553A130A1CD9A003028B3 /* ViewController.swift in Sources */,
+				30F553AF30A1CD9A003028B3 /* ContentView.swift in Sources */,
+				A1F1001130A1CD9A003028B1 /* CavePalette.swift in Sources */,
+				A1F1001330A1CD9A003028B1 /* AppBackgroundView.swift in Sources */,
+				A1F1001530A1CD9A003028B1 /* ScreenChrome.swift in Sources */,
+				A1F1001730A1CD9A003028B1 /* CaveArt.swift in Sources */,
+				A1F1002530A1CD9A003028B1 /* CaveDepth.swift in Sources */,
+				A1F1002730A1CD9A003028B1 /* CaveWidgets.swift in Sources */,
+				A1F1002930A1CD9A003028B1 /* CaveTypography.swift in Sources */,
+				A1F1002D30A1CD9A003028B1 /* AppLinks.swift in Sources */,
+				A1F1003130A1CD9A003028B1 /* CaveTabBar.swift in Sources */,
+				A1F1001930A1CD9A003028B1 /* QuestModels.swift in Sources */,
+				A1F1001B30A1CD9A003028B1 /* QuestStore.swift in Sources */,
+				A1F1001D30A1CD9A003028B1 /* BattleSession.swift in Sources */,
+				A1F1001F30A1CD9A003028B1 /* BattleView.swift in Sources */,
+				A1F1002130A1CD9A003028B1 /* DoorPuzzleView.swift in Sources */,
+				A1F1002330A1CD9A003028B1 /* ForgeView.swift in Sources */,
+				A1F1002F30A1CD9A003028B1 /* SettingsView.swift in Sources */,
+				A1F1003330A1CD9A003028B1 /* OnboardingView.swift in Sources */,
+				A1F1003530A1CD9A003028B1 /* RootView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		30F5539B30A1CD9A003028B3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30F5539C30A1CD9A003028B3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		30F5539D30A1CD9A003028B3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30F5539E30A1CD9A003028B3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30F553AA30A1CD9A003028B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30F553AB30A1CD9A003028B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30F553AC30A1CD9A003028B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69142DB5494B1C7AA87BF0CA /* Pods-Tigers Quest The Golden Cave.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tigers Quest The Golden Cave/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiger.mage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		30F553AD30A1CD9A003028B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15DC7A6656C4A672E1C0470A /* Pods-Tigers Quest The Golden Cave.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tigers Quest The Golden Cave/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tiger.mage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30F553A830A1CD9A003028B3 /* Build configuration list for PBXProject "Tigers Quest The Golden Cave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F553AA30A1CD9A003028B3 /* Debug */,
+				30F553AB30A1CD9A003028B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30F553A930A1CD9A003028B3 /* Build configuration list for PBXNativeTarget "Tigers Quest The Golden Cave" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F553AC30A1CD9A003028B3 /* Debug */,
+				30F553AD30A1CD9A003028B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30F5539130A1CD9A003028B3 /* Project object */;
+}
