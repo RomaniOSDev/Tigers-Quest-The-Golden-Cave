@@ -96,7 +96,11 @@ private struct HomeScroll: View {
                 }
 
                 CaveSection(title: "Paths", subtitle: "Seals and forge share the same fire.") {
-                    LazyVGrid(columns: metrics.shortcutColumns, spacing: metrics.tileGap) {
+                    LazyVGrid(
+                        columns: metrics.shortcutColumns,
+                        alignment: .center,
+                        spacing: metrics.tileGap
+                    ) {
                         ShortcutWidget(
                             title: "Seals",
                             detail: sealShortcutDetail,
@@ -115,6 +119,7 @@ private struct HomeScroll: View {
                             tab = .forge
                         }
                     }
+                    .frame(maxWidth: .infinity)
                 }
 
                 CaveSection(title: "Gear", subtitle: "Heat held in wood and plate.") {

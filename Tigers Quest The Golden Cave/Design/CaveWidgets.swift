@@ -21,28 +21,42 @@ struct HomeHeroWidget: View {
         CavePanel(padding: 0) {
             VStack(alignment: .leading, spacing: 0) {
                 ZStack(alignment: .bottomLeading) {
-                    CaveAssetImage(name: CaveArtName.homeHero, height: metrics.heroHeight, corner: 0, faded: false)
-                        .mask(
-                            LinearGradient(
-                                colors: [.white, .white, .white.opacity(0.12)],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
+                    CaveCroppedImage(
+                        name: CaveArtName.homeHero,
+                        height: metrics.heroHeight,
+                        alignment: .top
+                    )
+                    .overlay {
+                        LinearGradient(
+                            colors: [
+                                .clear,
+                                .clear,
+                                Color.black.opacity(0.55),
+                                Color(red: 0.12, green: 0.05, blue: 0.02).opacity(0.95)
+                            ],
+                            startPoint: .top,
+                            endPoint: .bottom
                         )
+                    }
 
                     VStack(alignment: .leading, spacing: 8) {
                         Text(stageTitle)
                             .font(CaveType.display(.title))
                             .foregroundStyle(CavePalette.ink)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.85)
                             .fixedSize(horizontal: false, vertical: true)
                         Text(situation)
                             .font(CaveType.body())
                             .foregroundStyle(CavePalette.bone)
+                            .lineLimit(3)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     .padding(metrics.panelInset)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
+                .frame(height: metrics.heroHeight)
+                .clipped()
 
                 VStack(alignment: .leading, spacing: 12) {
                     ProgressTrack(title: "Expedition", value: progress, tint: CavePalette.gold)
@@ -104,45 +118,29 @@ struct PouchWidget: View {
 
     @Environment(\.caveMetrics) private var metrics
 
+    private var bannerHeight: CGFloat {
+        metrics.isNarrow ? 128 : 118
+    }
+
     var body: some View {
         CavePanel(padding: 0, elevated: false) {
-            Group {
-                if metrics.isNarrow {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Image(CaveArtName.pouch)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 120)
-                            .clipped()
-                            .accessibilityHidden(true)
-                        pouchCopy
-                            .padding(.horizontal, metrics.panelInset)
-                            .padding(.bottom, metrics.panelInset)
-                    }
-                } else {
-                    HStack(alignment: .top, spacing: 0) {
-                        Image(CaveArtName.pouch)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: metrics.mediaSide, height: metrics.mediaSide + 12)
-                            .clipped()
-                            .accessibilityHidden(true)
-                        pouchCopy
-                            .padding(metrics.panelInset)
-                    }
+            VStack(alignment: .leading, spacing: 0) {
+                CaveMediaBanner(
+                    name: CaveArtName.pouch,
+                    height: bannerHeight,
+                    focus: .top
+                )
+
+                VStack(alignment: .leading, spacing: 10) {
+                    ResourceChip(title: "Coins", value: gold, symbol: "seal.fill", tint: CavePalette.gold)
+                    ResourceChip(title: "Rubies", value: gems, symbol: "diamond.fill", tint: CavePalette.ruby)
                 }
+                .padding(.horizontal, metrics.panelInset)
+                .padding(.top, 4)
+                .padding(.bottom, metrics.panelInset)
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: CaveDepth.panelRadius, style: .continuous))
-    }
-
-    private var pouchCopy: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            ResourceChip(title: "Coins", value: gold, symbol: "seal.fill", tint: CavePalette.gold)
-            ResourceChip(title: "Rubies", value: gems, symbol: "diamond.fill", tint: CavePalette.ruby)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -155,22 +153,25 @@ struct ShortcutWidget: View {
 
     @Environment(\.caveMetrics) private var metrics
 
+    private var cardHeight: CGFloat {
+        metrics.isNarrow ? 156 : 148
+    }
+
     var body: some View {
         Button(action: action) {
             ZStack(alignment: .bottomLeading) {
-                Image(imageName)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(maxWidth: .infinity)
-                    .frame(height: metrics.isNarrow ? 148 : 132)
-                    .clipped()
-                    .overlay(
+                CaveCroppedImage(name: imageName, height: cardHeight, alignment: .center)
+                    .overlay {
                         LinearGradient(
-                            colors: [.clear, .black.opacity(0.72)],
+                            colors: [
+                                Color.black.opacity(0.08),
+                                Color.black.opacity(0.28),
+                                Color.black.opacity(0.78)
+                            ],
                             startPoint: .top,
                             endPoint: .bottom
                         )
-                    )
+                    }
 
                 VStack(alignment: .leading, spacing: 4) {
                     Label(title, systemImage: symbol)
@@ -182,25 +183,23 @@ struct ShortcutWidget: View {
                         .font(CaveType.caption())
                         .foregroundStyle(CavePalette.bone)
                         .lineLimit(2)
-                        .fixedSize(horizontal: false, vertical: true)
+                        .multilineTextAlignment(.leading)
                 }
                 .padding(12)
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
             .frame(maxWidth: .infinity)
+            .frame(height: cardHeight)
             .clipShape(RoundedRectangle(cornerRadius: CaveDepth.tileRadius, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: CaveDepth.tileRadius, style: .continuous)
                     .strokeBorder(CaveDepth.goldEdge, lineWidth: 1.1)
             }
-            .background {
-                RoundedRectangle(cornerRadius: CaveDepth.tileRadius, style: .continuous)
-                    .fill(Color.black.opacity(0.001))
-                    .shadow(color: Color.black.opacity(0.4), radius: 8, x: 0, y: 5)
-            }
+            .compositingGroup()
+            .shadow(color: Color.black.opacity(0.35), radius: 6, x: 0, y: 4)
         }
         .buttonStyle(.plain)
-        .frame(maxWidth: .infinity, minHeight: 44)
+        .frame(maxWidth: .infinity)
         .accessibilityLabel(title)
         .accessibilityHint(detail)
     }
@@ -270,55 +269,49 @@ struct ThreatCell: View {
 
     @Environment(\.caveMetrics) private var metrics
 
+    private var bannerHeight: CGFloat {
+        metrics.isNarrow ? 168 : 156
+    }
+
     var body: some View {
         CavePanel(padding: 0, elevated: false) {
-            Group {
-                if metrics.isNarrow {
-                    VStack(alignment: .leading, spacing: 0) {
-                        Image(CaveArtName.foe(foe.kind))
-                            .resizable()
-                            .scaledToFill()
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 150)
-                            .clipped()
-                            .accessibilityHidden(true)
-                        threatCopy
-                            .padding(metrics.panelInset)
+            VStack(alignment: .leading, spacing: 0) {
+                ZStack(alignment: .bottomLeading) {
+                    CaveMediaBanner(
+                        name: CaveArtName.foe(foe.kind),
+                        height: bannerHeight,
+                        focus: .top
+                    )
+
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(foe.name)
+                            .font(CaveType.title(.title3))
+                            .foregroundStyle(CavePalette.ink)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.9)
+                        HStack(spacing: 8) {
+                            MiniStat(symbol: "heart.fill", text: "\(foe.maxHealth)", tint: CavePalette.ruby)
+                            MiniStat(symbol: "flame.fill", text: "\(foe.power)", tint: CavePalette.ember)
+                        }
                     }
-                } else {
-                    HStack(alignment: .top, spacing: 0) {
-                        Image(CaveArtName.foe(foe.kind))
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: metrics.mediaSide + 8, height: 148)
-                            .clipped()
-                            .accessibilityHidden(true)
-                        threatCopy
-                            .padding(metrics.panelInset)
-                    }
+                    .padding(.horizontal, metrics.panelInset)
+                    .padding(.bottom, 14)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
+
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(caption)
+                        .font(CaveType.body(.subheadline))
+                        .foregroundStyle(CavePalette.inkDim)
+                        .fixedSize(horizontal: false, vertical: true)
+                    CaveActionButton(title: actionTitle, symbol: "figure.fencing", action: action)
+                }
+                .padding(.horizontal, metrics.panelInset)
+                .padding(.top, 2)
+                .padding(.bottom, metrics.panelInset)
             }
         }
         .clipShape(RoundedRectangle(cornerRadius: CaveDepth.panelRadius, style: .continuous))
-    }
-
-    private var threatCopy: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(foe.name)
-                .font(CaveType.title(.title3))
-                .foregroundStyle(CavePalette.ink)
-                .fixedSize(horizontal: false, vertical: true)
-            Text(caption)
-                .font(CaveType.body(.subheadline))
-                .foregroundStyle(CavePalette.inkDim)
-                .fixedSize(horizontal: false, vertical: true)
-            HStack(spacing: 8) {
-                MiniStat(symbol: "heart.fill", text: "\(foe.maxHealth)", tint: CavePalette.ruby)
-                MiniStat(symbol: "flame.fill", text: "\(foe.power)", tint: CavePalette.ember)
-            }
-            CaveActionButton(title: actionTitle, symbol: "figure.fencing", action: action)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

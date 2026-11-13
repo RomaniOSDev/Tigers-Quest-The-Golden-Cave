@@ -241,6 +241,31 @@ struct CaveActionButton: View {
     }
 }
 
+/// Fills a fixed frame without letting `scaledToFill` expand layout into neighbors.
+struct CaveCroppedImage: View {
+    var name: String
+    var height: CGFloat
+    var alignment: Alignment = .center
+
+    var body: some View {
+        Color.clear
+            .frame(maxWidth: .infinity)
+            .frame(height: height)
+            .overlay {
+                GeometryReader { geo in
+                    Image(name)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: geo.size.width, height: geo.size.height, alignment: alignment)
+                        .clipped()
+                }
+            }
+            .clipped()
+            .contentShape(Rectangle())
+            .accessibilityHidden(true)
+    }
+}
+
 struct CaveAssetImage: View {
     var name: String
     var height: CGFloat
@@ -248,12 +273,7 @@ struct CaveAssetImage: View {
     var faded: Bool = true
 
     var body: some View {
-        Image(name)
-            .resizable()
-            .scaledToFill()
-            .frame(maxWidth: .infinity)
-            .frame(height: height)
-            .clipped()
+        CaveCroppedImage(name: name, height: height)
             .overlay {
                 if faded {
                     CaveDepth.bannerFade
@@ -271,6 +291,39 @@ struct CaveAssetImage: View {
                     .shadow(color: Color.black.opacity(0.4), radius: 8, x: 0, y: 5)
             }
             .accessibilityHidden(true)
+    }
+}
+
+/// Full-bleed media strip that soft-fades into card content below.
+struct CaveMediaBanner: View {
+    var name: String
+    var height: CGFloat
+    var focus: Alignment = .center
+
+    var body: some View {
+        CaveCroppedImage(name: name, height: height, alignment: focus)
+            .overlay(alignment: .bottom) {
+                LinearGradient(
+                    colors: [
+                        .clear,
+                        Color(red: 0.12, green: 0.05, blue: 0.02).opacity(0.55),
+                        Color(red: 0.12, green: 0.05, blue: 0.02).opacity(0.96)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .frame(height: min(88, height * 0.55))
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                .allowsHitTesting(false)
+            }
+            .overlay {
+                LinearGradient(
+                    colors: [Color.black.opacity(0.18), .clear, .clear],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .allowsHitTesting(false)
+            }
     }
 }
 

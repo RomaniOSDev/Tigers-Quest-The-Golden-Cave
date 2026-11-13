@@ -66,25 +66,37 @@ struct OnboardingView: View {
             AppBackgroundView()
 
             CaveAdaptiveContainer {
-                VStack(spacing: 0) {
-                    TabView(selection: $page) {
-                        ForEach(pages) { item in
-                            OnboardingPageView(page: item)
+                GeometryReader { geo in
+                    VStack(spacing: 0) {
+                        TabView(selection: $page) {
+                            ForEach(pages) { item in
+                                OnboardingPageView(
+                                    page: item,
+                                    availableHeight: max(220, geo.size.height - 168)
+                                )
                                 .tag(item.id)
+                                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            }
                         }
-                    }
-                    .tabViewStyle(.page(indexDisplayMode: .never))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .tabViewStyle(.page(indexDisplayMode: .never))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .clipped()
 
-                    bottomChrome
+                        bottomChrome
+                    }
+                    .padding(.horizontal, metricsGutter(for: geo.size.width))
+                    .padding(.top, 8)
+                    .padding(.bottom, 20)
+                    .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
                 }
-                .padding(.horizontal, 18)
-                .padding(.top, 12)
-                .padding(.bottom, 28)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .preferredColorScheme(.dark)
+    }
+
+    private func metricsGutter(for width: CGFloat) -> CGFloat {
+        CaveMetrics(width: width).gutter
     }
 
     private var bottomChrome: some View {
@@ -134,37 +146,49 @@ struct OnboardingView: View {
 
 private struct OnboardingPageView: View {
     var page: OnboardingPage
+    var availableHeight: CGFloat
     @Environment(\.caveMetrics) private var metrics
 
+    private var imageHeight: CGFloat {
+        let proposed = min(240, max(148, metrics.width * 0.48))
+        return min(proposed, max(132, availableHeight * 0.42))
+    }
+
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: metrics.stack) {
-                CaveSection(title: nil) {
-                    CaveAssetImage(
-                        name: page.imageName,
-                        height: min(280, max(200, metrics.width * 0.58)),
-                        corner: CaveDepth.tileRadius
-                    )
-                }
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: metrics.sectionGap) {
+                CaveAssetImage(
+                    name: page.imageName,
+                    height: imageHeight,
+                    corner: CaveDepth.tileRadius
+                )
+                .frame(maxWidth: .infinity)
+                .clipped()
 
                 CavePanel {
-                    VStack(alignment: .leading, spacing: 12) {
+                    VStack(alignment: .leading, spacing: 10) {
                         Label(page.title, systemImage: page.symbol)
                             .font(CaveType.display(.title2))
                             .foregroundStyle(CavePalette.gold)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.85)
                             .fixedSize(horizontal: false, vertical: true)
 
                         Text(page.body)
                             .font(CaveType.body())
                             .foregroundStyle(CavePalette.ink)
+                            .multilineTextAlignment(.leading)
                             .fixedSize(horizontal: false, vertical: true)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
             .padding(.bottom, 8)
             .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .clearScrollBackground()
+        .clipped()
     }
 }
 

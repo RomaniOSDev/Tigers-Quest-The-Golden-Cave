@@ -105,11 +105,11 @@ struct CaveMetrics: Equatable {
 
     var shortcutColumns: [GridItem] {
         if isNarrow {
-            return [GridItem(.flexible(), spacing: tileGap)]
+            return [GridItem(.flexible(minimum: 0), spacing: tileGap)]
         }
         return [
-            GridItem(.flexible(), spacing: tileGap),
-            GridItem(.flexible(), spacing: tileGap)
+            GridItem(.flexible(minimum: 0), spacing: tileGap),
+            GridItem(.flexible(minimum: 0), spacing: tileGap)
         ]
     }
 }
